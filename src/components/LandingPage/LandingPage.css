@@ -1,0 +1,176 @@
+:root {
+    --blue-primary: #3B5BA7;
+    --black-secondary: #000000;
+    --yellow-accent: #FFCB03;
+    --white: #ffffff;
+}
+
+/* ===== 1) Base page styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--black-secondary);
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+/* Utility: center‐constrain the content */
+.landing-page-container {
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+/* ===== 2) Hero / Intro Section ===== */
+.hero-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: var(--white);
+    
+}
+
+.hero-section h2 {
+    color: var(--blue-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    color: var(--black-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-cta {
+    background-color: var(--yellow-accent);
+    color: var(--blue-primary);
+    border: none;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.hero-cta:hover {
+    background-color: darken(var(--yellow-accent), 10%);
+}
+
+/* ===== 3) How It Works Section ===== */
+.how-it-works-section {
+    background-color: var(--white);
+    padding: 4rem 1rem;
+}
+
+.how-it-works-section h3 {
+    color: var(--blue-primary);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.how-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.how-item {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.how-item h4 {
+    color: var(--blue-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.how-item p {
+    color: var(--black-secondary);
+    font-size: 1rem;
+}
+
+/* ===== 4) Why Collectors Love Dexly ===== */
+.why-collectors-love-section {
+    background-color: var(--blue-primary);
+    color: var(--white);
+    padding: 4rem 1rem;
+}
+
+.why-collectors-love-section h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.benefits-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background-color: var(--white);
+    color: var(--black-secondary);
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    
+}
+
+.benefit-card h4 {
+    color: var(--blue-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* ===== 5) How to Get Started ===== */
+.how-to-get-started-section {
+    background-color: var(--white);
+    padding: 4rem 1rem;
+}
+
+.how-to-get-started-section h3 {
+    color: var(--blue-primary);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.get-started-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.get-started {
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.get-started h4 {
+    color: var(--blue-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.get-started p {
+    color: var(--black-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
