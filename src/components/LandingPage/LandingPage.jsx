@@ -1,13 +1,14 @@
-    import './LandingPage.css'
-    import MainNavBar from '../NavBars/MainNavBar'
+    import "./LandingPage.css"
+    import MainNavBar from "../NavBars/MainNavBar"
+    import "./LandingPage.css"
 
     function LandingPage() {
     return (
         <section className="landing-page-container">
-        {/* 1. Navbar */}
-        <header className="navbar">
-            <MainNavBar />
-        </header>
+            {/* 1. Navbar */}
+            <header className="navbar">
+                <MainNavBar />
+            </header>
 
         {/* 2. Hero/Intro */}
         <section className="hero-section">
@@ -41,7 +42,7 @@
                 </div>
 
                     <div className="how-item how-track-organize">
-                        <h4>Track & Organize Your Collection</h4>
+                        <h4>Track & Organize</h4>
                         <p>
                         Stay on top of your Pokémon collection—track what you own, uncover gaps  
                         in your binder, and watch your collection grow!
