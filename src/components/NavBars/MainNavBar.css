@@ -1,0 +1,68 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #3B5BA7;
+    color: #fff;
+    padding: 1rem;
+}
+
+.navbar-left .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.favorites-bar {
+    display: flex;
+    gap: 3rem;      
+    margin-left: 17.5rem;   
+}
+
+.empty-card-slot {
+    width: 40px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    margin-left: 15.5rem;     
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0; 
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 1.5rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.35rem;
+}
+
+.nav-search-bar {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    width: 15rem;
+    border-radius: 4px;
+    border: 1px solid #AEB0AE;
+    background-color: #222;
+    color: #ccc;
+    margin-left: 2rem; 
+}
+
+.nav-search-bar::placeholder {
+    font-size: 1.25rem;
+    color: #ccc;
+}
