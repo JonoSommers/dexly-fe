@@ -2,7 +2,7 @@ function MainNavBar() {
     return (
         <section className='main-navbar'>
             <header>
-                <h1>Hello</h1>
+                <h1>Nav Bar</h1>
             </header>
         </section>
     )
