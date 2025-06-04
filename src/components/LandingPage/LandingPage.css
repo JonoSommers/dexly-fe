@@ -5,7 +5,6 @@
     --white: #ffffff;
 }
 
-/* ===== 1) Base page styles ===== */
 body {
     margin: 0;
     padding: 0;
@@ -15,13 +14,11 @@ body {
     line-height: 1.5;
 }
 
-/* Utility: center‐constrain the content */
 .landing-page-container {
     margin: 0 auto;
     padding-bottom: 4rem;
 }
 
-/* ===== 2) Hero / Intro Section ===== */
 .hero-section {
     padding: 4rem 1rem;
     text-align: center;
@@ -57,7 +54,6 @@ body {
     background-color: darken(var(--yellow-accent), 10%);
 }
 
-/* ===== 3) How It Works Section ===== */
 .how-it-works-section {
     background-color: var(--white);
     padding: 4rem 1rem;
@@ -95,7 +91,6 @@ body {
     font-size: 1rem;
 }
 
-/* ===== 4) Why Collectors Love Dexly ===== */
 .why-collectors-love-section {
     background-color: var(--blue-primary);
     color: var(--white);
@@ -136,7 +131,6 @@ body {
     line-height: 1.5;
 }
 
-/* ===== 5) How to Get Started ===== */
 .how-to-get-started-section {
     background-color: var(--white);
     padding: 4rem 1rem;
