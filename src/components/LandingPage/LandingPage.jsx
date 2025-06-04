@@ -1,45 +1,39 @@
-    import "./LandingPage.css"
-    import MainNavBar from "../NavBars/MainNavBar"
-    import "./LandingPage.css"
+import "./LandingPage.css"
+import "./LandingPage.css"
 
-    function LandingPage() {
+function LandingPage() {
     return (
         <section className="landing-page-container">
-            {/* 1. Navbar */}
-            <header className="navbar">
-                <MainNavBar />
-            </header>
+            {/* 1. Hero/Intro */}
+            <section className="hero-section">
+                <h2>Your Personal Pokémon Card Catalog</h2>
+                <p className="hero-description">
+                    Easily search, sort, and track your entire Pokémon card collection—  
+                    from vintage hits to the latest releases.  
+                    All your cards. One place, zero clutter.
+                </p>
+                <button className="hero-cta">Get Started</button>
+            </section>
 
-        {/* 2. Hero/Intro */}
-        <section className="hero-section">
-            <h2>Your Personal Pokémon Card Catalog</h2>
-            <p className="hero-description">
-                Easily search, sort, and track your entire Pokémon card collection—  
-                from vintage hits to the latest releases.  
-                All your cards. One place, zero clutter.
-            </p>
-            <button className="hero-cta">Get Started</button>
-        </section>
+            {/* 2. How It Works */}
+            <section className="how-it-works-section">
+                <h3>How Dexly Works</h3>
+                <div className="how-items">
+                    <div className="how-item how-create-binders">
+                        <h4>Create & Build Binders</h4>
+                        <p>
+                        Create a personalized home for your collection—give each binder a name,  
+                        upload a custom cover image, and organize cards exactly how you want.
+                        </p>
+                    </div>
 
-        {/* 3. How It Works */}
-        <section className="how-it-works-section">
-            <h3>How Dexly Works</h3>
-            <div className="how-items">
-                <div className="how-item how-create-binders">
-                    <h4>Create & Build Binders</h4>
-                    <p>
-                    Create a personalized home for your collection—give each binder a name,  
-                    upload a custom cover image, and organize cards exactly how you want.
-                    </p>
-                </div>
-
-                <div className="how-item how-search-filter">
-                    <h4>Search & Filter Cards</h4>
-                    <p>
-                    Locate any card in seconds—browse through the catalog, search by name,  
-                    or filter by set to quickly add cards to your binders.
-                    </p>
-                </div>
+                    <div className="how-item how-search-filter">
+                        <h4>Search & Filter Cards</h4>
+                        <p>
+                        Locate any card in seconds—browse through the catalog, search by name,  
+                        or filter by set to quickly add cards to your binders.
+                        </p>
+                    </div>
 
                     <div className="how-item how-track-organize">
                         <h4>Track & Organize</h4>
@@ -51,7 +45,7 @@
                 </div>
             </section>
 
-            {/* 4. Why Collectors Love Dexly */}
+            {/* 3. Why Collectors Love Dexly */}
             <section className="why-collectors-love-section">
                 <h3>Why Collectors Love Dexly</h3>
                 <div className="benefits-wrapper">
@@ -87,7 +81,7 @@
                 </div>
             </section>
 
-            {/* 5. How to Get Started */}
+            {/* 4. How to Get Started */}
             <section className="how-to-get-started-section">
                 <h3>How to Get Started</h3>
                 <div className="get-started-wrapper">
