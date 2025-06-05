@@ -17,7 +17,7 @@
 .favorites-bar {
     display: flex;
     gap: 3rem;      
-    margin-left: 17.5rem;   
+    margin-left: auto;   
 }
 
 .empty-card-slot {
@@ -31,7 +31,9 @@
 .navbar-right {
     display: flex;
     align-items: center;
-    margin-left: 12.95rem;     
+    margin-left: 1.5rem;
+    margin-left: auto;
+    flex-wrap: wrap;     
 }
 
 .nav-links {
@@ -49,6 +51,18 @@
     color: #fff;
     text-decoration: none;
     font-size: 1.45rem;
+}
+
+.nav-button-link {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.45rem;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    font-family: inherit;
+    margin-top: 0.2rem;
 }
 
 .nav-search-bar {

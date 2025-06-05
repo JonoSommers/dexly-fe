@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom"
+import useUserStore from "../../store/useUserStore"
 import "./MainNavBar.css"
 
-function MainNavBar() {
+function MainNavBar({ openModal }) {
+    const user = useUserStore(state => state.user)
+    const logoutUser = useUserStore(state => state.logoutUser)
+
     return (
         <nav className="navbar">
             {/* 1) Logo on the far left */}
@@ -22,9 +26,20 @@ function MainNavBar() {
             {/* 4) Links + search on the far right */}
             <div className="navbar-right">
                 <ul className="nav-links">
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/cards">Cards</NavLink></li>
-                    <li><NavLink to="/login">Login</NavLink></li>
+                    {user ? (
+                    <>
+                        <li><NavLink to="/home">Home</NavLink></li>
+                        <li><NavLink to="/cards">Cards</NavLink></li>
+                        <li><NavLink to="/binders">Binders</NavLink></li>
+                        <li><button onClick={logoutUser} className="nav-button-link">Logout</button></li>
+                    </>
+                    ) : (
+                    <>
+                        <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/cards">Cards</NavLink></li>
+                        <li><button onClick={openModal} className="nav-button-link">Login</button></li>
+                    </>
+                    )}
                 </ul>
                 <input
                     className="nav-search-bar"

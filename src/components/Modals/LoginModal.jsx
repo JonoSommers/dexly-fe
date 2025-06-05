@@ -1,17 +1,27 @@
 import useUserStore from '../../store/useUserStore'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import "./LoginModal.css"
+import { useNavigate, NavLink } from 'react-router-dom'
 
-function LoginModal() {
+function LoginModal({ closeModal }) {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const user = useUserStore((state) => state.user);
     const error = useUserStore(state => state.error)
     const loginUser = useUserStore(state => state.loginUser)
 
-    function handleLogin(event) {
+    async function handleLogin(event) {
         event.preventDefault()
-        loginUser(username, password)
+        await loginUser(username, password)
+        navigate('/home');
     }
+
+    useEffect(() => {
+        if (user) {
+            closeModal()
+        }
+    }, [user, closeModal])
 
     return (
         <section className="login-container">
@@ -37,8 +47,12 @@ function LoginModal() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button onClick={handleLogin} className="login-button">Login</button>
+                <NavLink to="/home" onClick={handleLogin} className="login-button">Login</NavLink>
                 {error && <p className="error-message">{error}</p>}
+
+                <footer className="login-footer">
+                    <NavLink>Don't have an account? Click here to Sign Up!</NavLink>
+                </footer>
             </section>
         </section>
     )
