@@ -5,7 +5,7 @@ import LoginModal from './components/Modals/LoginModal.jsx';
 import MainNavBar from './components/NavBars/MainNavBar.jsx';
 import HomePage from './components/HomePage/HomePage.jsx'
 import useUserStore from './store/useUserStore.js';
-import SignupModal from './components/Modals/SignupModal.jsx';
+import SignupModal from './components/Modals/SignUpModal.jsx';
 
 function App() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -26,7 +26,7 @@ function App() {
         <section className="routing">
         <MainNavBar openLoginModal={openLoginModal} />
         {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />}
-        {isSignupModalOpen && <SignupModal closeModal={closeSignupModal} />}
+        {isSignupModalOpen && <SignupModal closeSignupModal={closeSignupModal} />}
 
         <Routes>
             <Route path="/" element={<LandingPage openSignupModal={openSignupModal} />} />

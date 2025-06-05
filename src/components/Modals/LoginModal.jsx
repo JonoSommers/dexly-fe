@@ -1,9 +1,10 @@
 import useUserStore from '../../store/useUserStore'
 import { useEffect, useState } from 'react'
-import "./LoginModal.css"
 import { useNavigate, NavLink } from 'react-router-dom'
+import "./LoginModal.css"
 
-function LoginModal({ closeModal }) {
+
+function LoginModal({ closeLoginModal }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -24,15 +25,15 @@ function LoginModal({ closeModal }) {
 
     useEffect(() => {
         if (user) {
-            closeModal()
+            closeLoginModal()
         }
-    }, [user, closeModal])
+    }, [user, closeLoginModal])
 
     return (
         <section className="login-container"
             onClick={(e) => {
                 if (e.target.classList.contains('login-container')) {
-                    closeModal();
+                    closeLoginModal();
                 }
             }}
         >
@@ -62,7 +63,7 @@ function LoginModal({ closeModal }) {
                 {error && <p className="error-message">{error}</p>}
 
                 <footer className="login-footer">
-                    <button className="signup-button">Don't have an account? Click here to Sign Up!</button>
+                    <button className="login-signup-button">Don't have an account? Click here to Sign Up!</button>
                 </footer>
             </section>
         </section>

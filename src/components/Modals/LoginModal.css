@@ -5,7 +5,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: flex-start;
-    padding-top: 9rem;
+    padding-top: 2rem;
     justify-content: center;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .login-button {
-    margin: 0.5rem 1.5rem 6rem 2.5rem;
+    margin: 0.5rem 2.5rem 6rem 2.5rem;
     padding: 1rem;
     font-size: 1.25rem;
     font-weight: 600;
@@ -97,7 +97,7 @@
     margin-top: -3.6rem;
 }
 
-.signup-button {
+.login-signup-button {
     background-color: transparent;
     color: #3B5BA7;
     font-size: 1.2rem;
