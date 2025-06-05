@@ -97,6 +97,22 @@
     margin-top: -3.6rem;
 }
 
+.signup-button {
+    background-color: transparent;
+    color: #3B5BA7;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: color 0.2s ease;
+}
+
+.signup-button:hover {
+    color: #2a4084;
+}
+
 @media (max-width: 400px) {
     .login-form {
         width: 95%;

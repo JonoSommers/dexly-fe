@@ -14,7 +14,12 @@ function LoginModal({ closeModal }) {
     async function handleLogin(event) {
         event.preventDefault()
         await loginUser(username, password)
-        navigate('/home');
+        const currentUser = useUserStore.getState().user;
+        const currentError = useUserStore.getState().error;
+
+        if (currentUser && !currentError) {
+            navigate('/home');
+        }
     }
 
     useEffect(() => {
@@ -24,7 +29,13 @@ function LoginModal({ closeModal }) {
     }, [user, closeModal])
 
     return (
-        <section className="login-container">
+        <section className="login-container"
+            onClick={(e) => {
+                if (e.target.classList.contains('login-container')) {
+                    closeModal();
+                }
+            }}
+        >
             <section className="login-form">
                 <header className="login-header">
                     <h1>Login</h1>
@@ -51,7 +62,7 @@ function LoginModal({ closeModal }) {
                 {error && <p className="error-message">{error}</p>}
 
                 <footer className="login-footer">
-                    <NavLink>Don't have an account? Click here to Sign Up!</NavLink>
+                    <button className="signup-button">Don't have an account? Click here to Sign Up!</button>
                 </footer>
             </section>
         </section>
