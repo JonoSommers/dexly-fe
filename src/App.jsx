@@ -5,13 +5,18 @@ import LoginModal from './components/Modals/LoginModal.jsx';
 import MainNavBar from './components/NavBars/MainNavBar.jsx';
 import HomePage from './components/HomePage/HomePage.jsx'
 import useUserStore from './store/useUserStore.js';
+import SignupModal from './components/Modals/SignUpModal.jsx';
 
 function App() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     const checkSession = useUserStore(state => state.checkSession)
 
-    const openModal = () => setIsLoginModalOpen(true);
-    const closeModal = () => setIsLoginModalOpen(false);
+    const openLoginModal = () => setIsLoginModalOpen(true);
+    const closeLoginModal = () => setIsLoginModalOpen(false);
+
+    const openSignupModal = () => setIsSignupModalOpen(true);
+    const closeSignupModal = () => setIsSignupModalOpen(false);
 
     useEffect(() => {
         checkSession()
@@ -19,11 +24,12 @@ function App() {
 
     return (
         <section className="routing">
-        <MainNavBar openModal={openModal} />
-        {isLoginModalOpen && <LoginModal closeModal={closeModal} />}
+        <MainNavBar openLoginModal={openLoginModal} />
+        {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} openSignupModal={openSignupModal} />}
+        {isSignupModalOpen && <SignupModal closeSignupModal={closeSignupModal} closeLoginModal={closeLoginModal} />}
 
         <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<LandingPage openSignupModal={openSignupModal} />} />
             <Route path="/home" element={<HomePage />} />
         </Routes>
         </section>

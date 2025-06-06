@@ -1,6 +1,6 @@
 import "./LandingPage.css"
 
-function LandingPage() {
+function LandingPage({ openSignupModal }) {
     return (
         <section className="landing-page-container">
             {/* 1. Hero/Intro */}
@@ -11,7 +11,7 @@ function LandingPage() {
                     from vintage hits to the latest releases.  
                     All your cards. One place, zero clutter.
                 </p>
-                <button className="hero-cta">Get Started</button>
+                <button onClick={openSignupModal} className="hero-cta">Get Started</button>
             </section>
 
             {/* 2. How It Works */}

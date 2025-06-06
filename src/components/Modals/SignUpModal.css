@@ -1,0 +1,103 @@
+.signup-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2rem;
+    justify-content: center;
+}
+
+.signup-form {
+    background-color: #FFFFFF;
+    width: 80vw;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.signup-header {
+    background-color: #3B5BA7;
+    padding: 1.5rem;         
+    text-align: center;
+}
+
+.signup-header h1 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 2rem;            
+}
+
+.signup-form h4 {
+    margin: 1.5rem 1.5rem 1rem 1.5rem;
+    color: #3B5BA7;
+    font-size: 1.25rem;       
+    font-weight: 500;
+}
+
+.signup-form input {
+    width: 92%;               
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    padding: 1rem;           
+    border: 1px solid #AEB0AE;
+    border-radius: 4px;
+    font-size: 1.25rem;     
+    color: #2F2F2F;
+    box-sizing: border-box; 
+}
+
+.signup-form input::placeholder {
+    color: #AEB0AE;
+    font-size: 1.25rem;
+}
+
+.signup-button {
+    margin: 0.5rem 2.5rem 6rem 2.5rem;
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #FFCB03;
+    color: #2F2F2F;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.signup-button:hover {
+    background-color: #e6b800;
+}
+
+.error-message {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -3.6rem;
+}
+
+.signup-button:hover {
+    color: #2a4084;
+}
+
+@media (max-width: 400px) {
+    .signup-form {
+        width: 95%;
+    }
+    .signup-form input,
+    .signup-button {
+        margin: 1rem auto;
+        width: calc(100% - 2rem);
+    }
+}

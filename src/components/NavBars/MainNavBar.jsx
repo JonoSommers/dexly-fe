@@ -1,10 +1,16 @@
-import { NavLink } from "react-router-dom"
+import { useNavigate, NavLink } from "react-router-dom"
 import useUserStore from "../../store/useUserStore"
 import "./MainNavBar.css"
 
-function MainNavBar({ openModal }) {
+function MainNavBar({ openLoginModal }) {
+    const navigate = useNavigate();
     const user = useUserStore(state => state.user)
     const logoutUser = useUserStore(state => state.logoutUser)
+
+    function logout() {
+        logoutUser()
+        navigate('/')
+    }
 
     return (
         <nav className="navbar">
@@ -31,13 +37,13 @@ function MainNavBar({ openModal }) {
                         <li><NavLink to="/home">Home</NavLink></li>
                         <li><NavLink to="/cards">Cards</NavLink></li>
                         <li><NavLink to="/binders">Binders</NavLink></li>
-                        <li><button onClick={logoutUser} className="nav-button-link">Logout</button></li>
+                        <li><button onClick={logout} className="nav-button-link">Logout</button></li>
                     </>
                     ) : (
                     <>
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/cards">Cards</NavLink></li>
-                        <li><button onClick={openModal} className="nav-button-link">Login</button></li>
+                        <li><button onClick={openLoginModal} className="nav-button-link">Login</button></li>
                     </>
                     )}
                 </ul>
