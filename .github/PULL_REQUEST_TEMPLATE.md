@@ -32,4 +32,3 @@
 - [ ] I have reviewed my code
 - [ ] The code will run locally
 - [ ] My code has no unused/commented out code
-- [ ] I have commented my code, particularly in hard-to-understand areas
