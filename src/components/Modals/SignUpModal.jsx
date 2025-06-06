@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import "./SignUpModal.css"
 
-function SignUpModal({ closeSignupModal }) {
+function SignUpModal({ closeSignupModal, closeLoginModal }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -15,12 +15,10 @@ function SignUpModal({ closeSignupModal }) {
 
     async function handleCreate(event) {
         event.preventDefault()
-        await createUser(username, password, confirmPassword)
+        const success = await createUser(username, password, confirmPassword)
+        if (!success) return;
         await loginUser(username, password)
-        const currentUser = useUserStore.getState().user;
-        const currentError = useUserStore.getState().error;
-
-        if (currentUser && !currentError) {
+        if (user) {
             navigate('/home');
         }
     }
@@ -36,12 +34,13 @@ function SignUpModal({ closeSignupModal }) {
             onClick={(e) => {
                 if (e.target.classList.contains('signup-container')) {
                     closeSignupModal();
+                    closeLoginModal();
                 }
             }}
         >
             <section className="signup-form">
                 <header className="signup-header">
-                    <h1>signup</h1>
+                    <h1>Sign Up</h1>
                 </header>
 
                 <h4>Username</h4>
@@ -70,7 +69,7 @@ function SignUpModal({ closeSignupModal }) {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <NavLink to="/home" onClick={handleCreate} className="signup-button">Sign Up</NavLink>
+                <NavLink to="/home" onClick={handleCreate} className="signup-button">Login</NavLink>
                 {error && <p className="error-message">{error}</p>}
             </section>
         </section>

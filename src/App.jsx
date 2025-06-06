@@ -25,8 +25,8 @@ function App() {
     return (
         <section className="routing">
         <MainNavBar openLoginModal={openLoginModal} />
-        {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} />}
-        {isSignupModalOpen && <SignupModal closeSignupModal={closeSignupModal} />}
+        {isLoginModalOpen && <LoginModal closeLoginModal={closeLoginModal} openSignupModal={openSignupModal} />}
+        {isSignupModalOpen && <SignupModal closeSignupModal={closeSignupModal} closeLoginModal={closeLoginModal} />}
 
         <Routes>
             <Route path="/" element={<LandingPage openSignupModal={openSignupModal} />} />

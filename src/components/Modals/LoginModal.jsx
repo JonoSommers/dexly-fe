@@ -4,7 +4,7 @@ import { useNavigate, NavLink } from 'react-router-dom'
 import "./LoginModal.css"
 
 
-function LoginModal({ closeLoginModal }) {
+function LoginModal({ closeLoginModal, openSignupModal }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -28,6 +28,11 @@ function LoginModal({ closeLoginModal }) {
             closeLoginModal()
         }
     }, [user, closeLoginModal])
+
+    function modalOperations() {
+        closeLoginModal()
+        openSignupModal()
+    }
 
     return (
         <section className="login-container"
@@ -63,7 +68,7 @@ function LoginModal({ closeLoginModal }) {
                 {error && <p className="error-message">{error}</p>}
 
                 <footer className="login-footer">
-                    <button className="login-signup-button">Don't have an account? Click here to Sign Up!</button>
+                    <button onClick={modalOperations} className="login-signup-button">Don't have an account? Click here to Sign Up!</button>
                 </footer>
             </section>
         </section>

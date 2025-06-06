@@ -34,7 +34,7 @@ const useUserStore = create((set) => ({
         }
     },
 
-    createUser: async (username, password, confirmPassword) => {
+    createUser: async (username, password, password_confirmation) => {
         try {
             const response = await fetch('http://localhost:3000/api/v1/users', {
                 method: 'POST',
@@ -42,18 +42,22 @@ const useUserStore = create((set) => ({
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, password, confirmPassword })
+                body: JSON.stringify({ username, password, password_confirmation })
             });
 
             const data = await response.json();
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to create account.');
+                const message = Array.isArray(data.errors)
+                    ? data.errors.join(', ')
+                    : data.error || 'Failed to create account.';
+                throw new Error(message);
             }
-
             set({ user: data.data, binders: data.data.attributes.binders || null, error: null });
+            return true;
         } catch (error) {
             console.log('error message: ', error.message);
             set({ error: error.message });
+            return false;
         }
     },
 
